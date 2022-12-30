@@ -40,21 +40,21 @@ class Set {
     otherSet.forEach((elem) => unionSet.add(elem));
     return unionSet;
   }
-    
-    isSubsetOf(otherSet) {
-        if (this.size() > otherSet.size()) {
-            return false
-        }
-        let isSubset = true
-        this.values().forEach(elem => {
-            if (!otherSet.hasElement(elem)) {
-                isSubset = false
-                return false
-            }
-            return true
-        })
-        return isSubset
+
+  isSubsetOf(otherSet) {
+    if (this.size() > otherSet.size()) {
+      return false;
     }
+    let isSubset = true;
+    this.values().forEach((elem) => {
+      if (!otherSet.hasElement(elem)) {
+        isSubset = false;
+        return false;
+      }
+      return true;
+    });
+    return isSubset;
+  }
 
   intersection(otherSet) {
     const interSet = new Set();
@@ -73,15 +73,15 @@ class Set {
     });
     return interSet;
   }
-    
-    difference(otherSet) {
-        let differenceSet = new Set()
-        this.values().forEach(elem => {
-            if (!otherSet.hasElement(elem)) {
-                differenceSet.add(elem)
-            }
-        })
-        return differenceSet
+
+  difference(otherSet) {
+    let differenceSet = new Set();
+    this.values().forEach((elem) => {
+      if (!otherSet.hasElement(elem)) {
+        differenceSet.add(elem);
+      }
+    });
+    return differenceSet;
   }
 }
 
