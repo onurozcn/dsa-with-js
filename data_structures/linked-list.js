@@ -1,4 +1,4 @@
-const {defaultEquals} = require("../util/util");
+const { defaultEquals } = require("../utils/util");
 const Node = require("../models/node");
 
 class LinkedList {
@@ -116,8 +116,8 @@ module.exports = LinkedList;
 // d - c - b - a
 
 function reverseLinkedList(list) {
-  temp_curr = null
-  previous = null
+  temp_curr = null;
+  previous = null;
   while (true) {
     //b | c
     temp_curr = list.head.next;
@@ -126,15 +126,12 @@ function reverseLinkedList(list) {
 
     previous = list.head;
 
-    if (temp_curr === null)
-      break
+    if (temp_curr === null) break;
     // b
     list.head = temp_curr;
-
   }
-  return list
-
-} 
+  return list;
+}
 
 const list = new LinkedList();
 list.push(115);
@@ -144,7 +141,7 @@ list.push(20);
 list.push(125);
 list.push(1110);
 console.log(list.toString());
-const rlist = reverseLinkedList(list)
+const rlist = reverseLinkedList(list);
 console.log(rlist.toString());
 console.log(list.toString());
 // list.removeAt(0);

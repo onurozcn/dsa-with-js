@@ -1,5 +1,5 @@
 const LinkedList = require("./linked-list");
-const defaultEquals = require("../util/util").default;
+const defaultEquals = require("../utils/util").default;
 const DoublyNode = require("../models/doubly-node");
 
 class DoublyLinkedList extends LinkedList {

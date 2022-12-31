@@ -1,4 +1,5 @@
-const defaultToString = require("../util/util").defaultToString;
+const { defaultToString } = require("../utils/util");
+const ValuePair = require("../models/value-pair");
 
 class Dictionary {
   constructor(toStrFn = defaultToString) {
@@ -85,16 +86,6 @@ class Dictionary {
   }
 }
 
-class ValuePair {
-  constructor(key, value) {
-    this.key = key;
-    this.value = value;
-  }
-  toString() {
-    return `[#${this.key}: ${this.value}]`;
-  }
-}
-
 module.exports = Dictionary;
 
 const dictionary = new Dictionary();
@@ -108,7 +99,6 @@ console.log(dictionary.size());
 console.log(dictionary.keys());
 console.log(dictionary.values());
 console.log(dictionary.get("Tyrion"));
-
 
 dictionary.forEach((k, v) => {
   console.log(`key: ${k}, value: ${v}`);
