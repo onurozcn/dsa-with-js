@@ -4,3 +4,5 @@ class QueueElement {
     this.priority = priority;
   }
 }
+
+module.exports = QueueElement;
