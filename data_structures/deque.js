@@ -31,18 +31,24 @@ class Deque {
     this.count++;
   }
 
-  removeBack() {
-    const deleted = this.items[this.count - 1];
-    delete this.items[this.count - 1];
-    this.count--;
-    return deleted;
-  }
   removeFront() {
-    const deleted = this.items[this.lowestCount];
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    const result = this.items[this.lowestCount];
     delete this.items[this.lowestCount];
-    this.count--;
     this.lowestCount++;
-    return deleted;
+    return result;
+  }
+
+  removeBack() {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    this.count--;
+    const result = this.items[this.count];
+    delete this.items[this.count];
+    return result;
   }
   peekFront() {
     return this.items[this.lowestCount];
@@ -53,7 +59,6 @@ class Deque {
 }
 
 module.exports = Deque;
-
 
 // const deque = new Deque();
 // console.log(deque.isEmpty()); // outputs true
@@ -70,4 +75,3 @@ module.exports = Deque;
 // console.log("hello ",deque.items); // John
 // deque.addFront("Jack"); // Jack comes back for information
 // console.log(deque.items); // John,Jack
-
