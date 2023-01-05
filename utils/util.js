@@ -1,3 +1,11 @@
+const BalanceFactor = {
+  UNBALANCED_RIGHT: 1,
+  SLIGHTLY_UNBALANCED_RIGHT: 2,
+  BALANCED: 3,
+  SLIGHTLY_UNBALANCED_LEFT: 4,
+  UNBALANCED_LEFT: 5,
+};
+
 const Compare = {
   LESS_THAN: -1,
   BIGGER_THAN: 1,
@@ -23,10 +31,13 @@ function defaultToString(item) {
   } else if (typeof item === "string" || item instanceof String) {
     return `${item}`;
   }
-  return item.toString(); 
+  return item.toString();
 }
 
-
-
-
-module.exports = { defaultEquals, defaultCompare, Compare, defaultToString};
+module.exports = {
+  defaultEquals,
+  defaultCompare,
+  Compare,
+  defaultToString,
+  BalanceFactor,
+};
